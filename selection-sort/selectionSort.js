@@ -1,3 +1,5 @@
+import swap from '../helpers/swap';
+
 export default function (items) {
   for (let i = 0, len = items.length; i < len; i++) {
     let min = i;
@@ -9,10 +11,7 @@ export default function (items) {
     }
 
     if (i !== min) {
-      const temp = items[i];
-
-      items[i] = items[min];
-      items[min] = temp;
+      swap(items, i, min);
     }
   }
 
